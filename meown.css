@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F3E5F5; 
+}
+
+p {
+    font-size: 15px;
+}
+/* Style the button that is used to open and close the collapsible content */
+#map {
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+}
+ .collapsible-set {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Define the number of columns */
+            gap: 10px; /* Define the gap between grid items */
+        }
+
+        /* Style for grid items */
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+.contactTab {
+	background-image: linear-gradient(#FFD700, yellow, orange);
+	min-width: 70%;
+	
+	font-size: 24px;
+	border-style: outset;
+	padding: 5%;
+	 text-align: center;
+	
+}
+.tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.blogPost {
+    display: inline-block;
+    font-size: 12px;
+    color: #454246; 
+    background-color: #ffdb58; 
+    border: 2px outset #ffdb58; 
+    text-decoration: none;
+    border-radius: 5px;
+	padding: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+	max-width: 70%;
+}
+
+.bannerHolder {
+    display: inline-block;
+    font-size: 12px;
+    color: #454246; 
+    background-color: #000000; 
+    border: 2px outset #ffdb58; 
+    text-decoration: none;
+    border-radius: 5px;
+	padding: 1%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+	max-width: 100%;
+}
+.blogBanner {
+	
+	max-width: 70%;
+	max-height: 70%;
+}
+.blogPic {
+	
+	max-width: 20%;
+	max-height: 20%;
+	overflow: hidden;
+}
+
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+	
+	max-width: 55px;
+	max-height: 65px;
+    right: 20px;
+    background: linear-gradient(75deg, #ffb28b, #ffd500);
+	
+	 background-repeat: no-repeat;
+    color: #002aff;
+    padding: 10px 20px;
+    border: 2px outset #ffdb58; 
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	    display: inline-block;
+
+}
+
+.button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+}
+
+.indexList-button {
+    max-width: 55px;
+    max-height: 65px;
+    background: linear-gradient(75deg, #ffb28b, #ffd500);
+    background-repeat: no-repeat;
+    color: #002aff;
+    padding: 10px 20px;
+    border: 2px outset #ffdb58;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+.post-links {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+
+
+.button-container:hover .post-links {
+    display: block;
+}
+/*for phones*/
+@media (max-width: 768px) {
+    .contact-button {
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/*for phones*/
+@media (max-width: 768px) {
+    .indexList-button {
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
