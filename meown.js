@@ -40,4 +40,12 @@ for (i = 0; i < coll.length; i++) {
 }
 });
 
+$(document).ready(function(){
+    $.getJSON("testjson.json", function(data){
+        $('.percentage').html(data.percentage);
+        console.log(data);
+    }).fail(function(){
+        console.log("json retrieval failed");
+    });
+});
 

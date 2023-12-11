@@ -70,6 +70,16 @@ p {
 	 text-align: center;
 	
 }
+.servicesTab {
+	background-image: linear-gradient(#FFD700, yellow, orange);
+	min-width: 70%;
+	
+	font-size: 24px;
+	border-style: outset;
+	padding: 5%;
+	 text-align: center;
+	
+}
 .tab-container {
     display: flex;
     justify-content: center;
@@ -118,6 +128,27 @@ p {
 }
 
 .contact-button {
+    position: fixed;
+    bottom: 20px;
+	
+	max-width: 55px;
+	max-height: 65px;
+    right: 20px;
+    background: linear-gradient(75deg, #ffb28b, #ffd500);
+	
+	 background-repeat: no-repeat;
+    color: #002aff;
+    padding: 10px 20px;
+    border: 2px outset #ffdb58; 
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	    display: inline-block;
+
+}
+
+.services-button {
     position: fixed;
     bottom: 20px;
 	
