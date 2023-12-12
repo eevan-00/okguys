@@ -1,16 +1,16 @@
  function initMap() {
-         // Specify the coordinates for Red Deer, Alberta, Canada
+    
     var redDeerLatLng = { lat: 52.2681, lng: -113.8113 };
 
-    // Create a map object and set its properties
-    var mymap = L.map('map').setView(redDeerLatLng, 12); // Zoom level adjusted to your preference
 
-    // Add a tile layer from OpenStreetMap
+    var mymap = L.map('map').setView(redDeerLatLng, 12); 
+
+ 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
 
-        // You can add markers, polygons, and more to the map here
+
     }
 document.addEventListener('DOMContentLoaded', initMap);
 
@@ -51,8 +51,14 @@ for (i2 = 0; i2 < col2.length; i2++) {
 
 $(document).ready(function(){
     $.getJSON("testjson.json", function(data){
-        $('.percentage').html(data.percentage);
-        console.log(data);
+		 const percentage = data.percentage;
+		 
+		 $('.percentage').html(data.percentage);
+
+		
+		 $('#jsonout').html(`<strong>SALE!!:</strong> ${percentage}`);		 
+		  $('#jsonout').css('color', 'red');
+		   console.log(data);
     }).fail(function(){
         console.log("json retrieval failed");
     });
@@ -60,38 +66,30 @@ $(document).ready(function(){
 	
 
 $(document).ready(function() {
-  const xmlString = `<?xml version="1.0" ?>
-<management>
-<teammember>
-<name>Agnes</name>
-<title>Vice President of Accounting</title>
-<bio>With over 14 years of public accounting ...
-</bio>
-</teammember>
+  const xmlUrl = 'xmlTest.xml'; 
 
-</management>
-  `;
 
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+  $.get(xmlUrl, function(data) {
+    const xmlDoc = $.parseXML(data);
+    const $xml = $(xmlDoc);
 
-  const names = xmlDoc.querySelectorAll("name");
-  const titles = xmlDoc.querySelectorAll("title");
+    const names = $xml.find("name");
+    const titles = $xml.find("title");
 
-  const container = document.createElement("div");
+    const container = $("<div></div>"); 
 
-  for (let i = 0; i < names.length; i++) {
-    const name = names[i].textContent;
-    const title = titles[i].textContent;
+    names.each(function(i) {
+      const name = $(this).text();
+      const title = titles.eq(i).text();
 
-    const entry = document.createElement("div");
-    entry.innerHTML = `<strong>Name:</strong> ${name}, <strong>Title:</strong> ${title}`;
+      const entry = $("<div></div>").html(`<strong>Name:</strong> ${name}, <strong>Title:</strong> ${title}`);
+      container.append(entry);
+    });
 
-    container.appendChild(entry);
-  }
-
-  $("#output").append(container);
+    $("#output").empty().append(container); 
+  });
 });
+
 
 
 
