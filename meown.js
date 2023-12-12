@@ -49,3 +49,18 @@ $(document).ready(function(){
     });
 });
 
+ function initMap() {
+    
+    var redDeerLatLng = { lat: 52.2681, lng: -113.8113 };
+
+
+    var mymap = L.map('map').setView(redDeerLatLng, 12); 
+
+ 
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+
+
+    }
+
