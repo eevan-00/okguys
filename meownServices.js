@@ -82,7 +82,7 @@ $(document).ready(function() {
       const name = $(this).text();
       const title = titles.eq(i).text();
 
-      const entry = $("<div></div>").html(`<strong>Name:</strong> ${name}, <strong>Title:</strong> ${title}`);
+      const entry = $("<div></div>").html(`<strong>Our Owner:</strong> ${name}, <strong>Title:</strong> ${title}`);
       container.append(entry);
     });
 
