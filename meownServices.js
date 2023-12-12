@@ -53,7 +53,7 @@ $(document).ready(function(){
     $.getJSON("testjson.json", function(data){
 		 const percentage = data.percentage;
 		 
-		 $('.percentage').html(data.percentage);
+		 //$('.percentage').html(data.percentage);
 
 		
 		 $('#jsonout').html(`<strong>SALE!!:</strong> ${percentage}`);		 
